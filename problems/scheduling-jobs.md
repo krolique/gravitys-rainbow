@@ -1,9 +1,9 @@
 # Scheduling Jobs
 Given N jobs where every job is represented by following three elements:
 
-- Start Time
-- Finish Time.
-- Profit or Value Associated.
+1. start Time
+1. finish Time.
+1. Profit or Value Associated.
 
 Find the maximum profit subset of jobs such that no two jobs in the subset overlap.
 
@@ -12,12 +12,11 @@ Example:
 Input: Number of Jobs n = 4
 
 | # | Start Time | Finish Time | Profit |
-|---  -----------|-------------| -------|
+|---|------------|-------------| -------|
 | 1 | 1          | 2           | 50     |
 | 2 | 3          | 5           | 20     |
 | 3 | 6          | 19          | 100    |
-| 4 | 2          | 100         | 200    |
- 
+| 4 | 2          | 100         | 200    | 
 
 Output: The maximum profit is 250.
 

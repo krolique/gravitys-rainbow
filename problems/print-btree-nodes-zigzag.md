@@ -8,22 +8,22 @@ Example:
 3rd vertical line from top to bottom and so on
 
 ```
-            5
-           / \
-          3   7
-         / \ / \
-        1  4 6  8
-       / \  \
-      2   9  10
+      5
+     / \
+    3   7
+   / \ / \
+  1  4 6  8
+ / \  \
+2   9  10
 ```
 
 Answer would be:
 
 ```
-        1
-        2 3
-        5 4 6
-        9 7
-        8
-        10
+1
+2 3
+5 4 6
+9 7
+8
+10
 ```

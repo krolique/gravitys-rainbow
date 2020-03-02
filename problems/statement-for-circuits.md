@@ -1,6 +1,5 @@
 # Problem Statement for Circuits
 
-
 An essential part of circuit design and general system optimization is 
 critical path analysis. On a chip, the critical path represents the
 longest path any signal would have to travel during execution. In this
@@ -23,8 +22,8 @@ As mentioned above, the chip will not contain any cyclic paths.
 For example::
 
 ```
-    connects = {"1 2", "2", ""}
-    costs    = {"5 3", "7", ""}
+connects = {"1 2", "2", ""}
+costs    = {"5 3", "7", ""}
 ```
 
 In this example, component 0 connects to components 1 and 2 with costs 5
@@ -58,20 +57,29 @@ Examples
 ```
  {"1 2 3 4 5","2 3 4 5","3 4 5","4 5","5",""}
  {"2 2 2 2 2","2 2 2 2","2 2 2","2 2","2",""}
+```
  Returns: 10
  The longest path goes from 0-1-2-3-4-5 for a cost of 10.
-``
-    2)
+
+
+2. 
+```
         {"1","2","3","","5","6","7",""}
         {"2","2","2","","3","3","3",""}
-        Returns: 9
-        The 0-1-2-3 path costs 6 whereas the 4-5-6-7 path costs 9
-    3)
-        {"","2 3 5","4 5","5 6","7","7 8","8 9","10", "10 11 12","11","12",
-        "12",""}
-        {"","3 2 9","2 4","6 9","3","1 2","1 2","5", "5 6 9","2","5","3",""}
-        Returns: 22
-    4)
-        {"","2 3","3 4 5","4 6","5 6","7","5 7",""}
-        {"","30 50","19 6 40","12 10","35 23","8","11 20",""}
-        Returns: 105
+```
+Returns: 9
+The 0-1-2-3 path costs 6 whereas the 4-5-6-7 path costs 9
+
+3.
+```
+{"","2 3 5","4 5","5 6","7","7 8","8 9","10", "10 11 12","11","12","12",""}
+{"","3 2 9","2 4","6 9","3","1 2","1 2","5", "5 6 9","2","5","3",""}
+```
+Returns: 22
+
+4.
+```
+{"","2 3","3 4 5","4 6","5 6","7","5 7",""}
+{"","30 50","19 6 40","12 10","35 23","8","11 20",""}
+```
+Returns: 105

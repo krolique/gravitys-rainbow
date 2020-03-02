@@ -11,8 +11,8 @@ achieve is a function that on the average will perform less than n
 number of comparisons to find an element in the array.
 
 ```
-    Given: [4, 5, 6, 7, 8, 9, 10, 9, 10], find first occurrence of 10
-    Output: 6
+Given: [4, 5, 6, 7, 8, 9, 10, 9, 10], find first occurrence of 10
+Output: 6
 ```
 
 
@@ -30,30 +30,30 @@ Let's run through an example of find 6 in the given array with the
 described algorithm.
 
 ```
-     ↓
-    [1, 2, 3, 4, 3, 2, 1, 0, 1, 2, 3, 4, 5, 6]
+ ↓
+[1, 2, 3, 4, 3, 2, 1, 0, 1, 2, 3, 4, 5, 6]
 
 ```
 
 Element at index 0 does not equal to 6, and we increment the index counter (6 - 1) by 5
 
 ```
-                    ↓
-    [1, 2, 3, 4, 3, 2, 1, 0, 1, 2, 3, 4, 5, 6]
+                ↓
+[1, 2, 3, 4, 3, 2, 1, 0, 1, 2, 3, 4, 5, 6]
 ```
 
 Element at index 5 does not equal to 6, and we increment the index counter (6 - 2) by 4
 
 ```
-                                ↓
-    [1, 2, 3, 4, 3, 2, 1, 0, 1, 2, 3, 4, 5, 6] index = 9
+                            ↓
+[1, 2, 3, 4, 3, 2, 1, 0, 1, 2, 3, 4, 5, 6] index = 9
 ```
 
 Element at index 9 does not equal to 6, and we increment the index counter (6 - 2) by 4
 
 ```
-                                            ↓
-    [1, 2, 3, 4, 3, 2, 1, 0, 1, 2, 3, 4, 5, 6] index = 13
+                                        ↓
+[1, 2, 3, 4, 3, 2, 1, 0, 1, 2, 3, 4, 5, 6] index = 13
 ```
 
 The element at index 13 does equal 6 and we can return 13
@@ -63,22 +63,22 @@ The algorithm seems to work, however how do we know this approach will not miss 
 Lets run through an example where we would fail to find a given number. Find 8 in the same array.
 
 ```
-     ↓
-    [1, 2, 3, 4, 3, 2, 1, 0, 1, 2, 3, 4, 5, 6]
+ ↓
+[1, 2, 3, 4, 3, 2, 1, 0, 1, 2, 3, 4, 5, 6]
 ```
 
 Element at index 0 does not equal to 8, and we increment the index counter (8 - 1) by 7
 
 ```
-                          ↓
-    [1, 2, 3, 4, 3, 2, 1, 0, 1, 2, 3, 4, 5, 6]
+                      ↓
+[1, 2, 3, 4, 3, 2, 1, 0, 1, 2, 3, 4, 5, 6]
 ```
 
 Element at index 7 does not equal to 8, and we increment the index counter (8 - 0) by 8
 
 ```
-                                                   ↓
-    [1, 2, 3, 4, 3, 2, 1, 0, 1, 2, 3, 4, 5, 6], 7, 8
+                                               ↓
+[1, 2, 3, 4, 3, 2, 1, 0, 1, 2, 3, 4, 5, 6], 7, 8
 ```
 
 Oops, we are out of bound! Which means this array of integers cannot 
@@ -99,15 +99,15 @@ Because now there are 3 less steps we have to make in every increment.
 Example, find number 16 in the current array.
 
 ```
-     ↓
-    [1, 4, 7, 10, 13, 16, 13, 10, 7]
+ ↓
+[1, 4, 7, 10, 13, 16, 13, 10, 7]
 ```
 
 Element at index 0 does not equal to 16, and we increment the index counter by (16 - 1)/3 by 5
 
 ```
-                      ↓
-    [1, 4, 7, 10, 13, 16, 13, 10, 7]
+                  ↓
+[1, 4, 7, 10, 13, 16, 13, 10, 7]
 ```
 The element at index 5 does equal 16 and we can return 5
 
