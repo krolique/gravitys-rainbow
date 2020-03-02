@@ -20,7 +20,7 @@ set -e
 # | 41+      | F     | very high - error-prone, unstable block |
 # +----------+-------+-----------------------------------------+
 
-MIN_RANK=B
+MIN_RANK=C
 
 RANKED_BELOW=$(radon cc . -e "tests/*" --min $MIN_RANK | wc -l)
 

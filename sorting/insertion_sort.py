@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """
-    The Insertion Sort
-    ------------------
+    Insertion Sort
+    --------------
 
     Insertion sort is a simple sorting algorithm that builds the final sorted
     array (or list) one item at a time. It is much less efficient on large
@@ -32,38 +32,10 @@
 """
 
 
-def insertion_sort(integer_array):
-    """ Sorts the integer array using the insertion sort
-    """
+def insertion_sort(array):
+    """ """
 
-    for idx in range(1, len(integer_array)):
-        key = integer_array[idx]
-        i = idx - 1
-        while i >= 0 and integer_array[i] > key:
-            integer_array[i + 1] = integer_array[i]
-            i -= 1
-        integer_array[i + 1] = key
-    return integer_array
-
-
-def reverse_insertion_sort(integer_array):
-    """ Sort the integer array using the insertion sort by in increasing
-    order """
-
-    for idx in range(1, len(integer_array)):
-        key = integer_array[idx]
-        i = idx - 1
-        while i >= 0 and integer_array[i] < key:
-            integer_array[i + 1] = integer_array[i]
-            i -= 1
-        integer_array[i + 1] = key
-    return integer_array
-
-
-if __name__ == "__main__":
-
-    DATA_1 = [5, 2, 4, 6, 1, 3]
-    assert insertion_sort(DATA_1) == [1, 2, 3, 4, 5, 6]
-    DATA_2 = [31, 41, 59, 26, 41, 58]
-    assert insertion_sort(DATA_2) == [26, 31, 41, 41, 58, 59]
-    print(reverse_insertion_sort(DATA_1))
+    for idx in range(len(array)):
+        while idx and array[idx - 1] >= array[idx]:
+            array[idx], array[idx - 1], = array[idx - 1], array[idx]
+            idx -= 1
