@@ -71,6 +71,15 @@ class LinkedList():
 
         return self.size
 
+    def clear(self):
+        """ Removes all of the elements from this list.
+
+        complexity: O(1)
+        """
+
+        self.head = None
+        self.size = 0
+
     def add_first(self, value):
         """ Inserts the specified element at the beginning of this
         list.
@@ -146,7 +155,46 @@ class LinkedList():
             pt = pt.next
             cnt += 1
 
-    def remove(self, value):
+    def remove_last(self):
+        """ Removes and returns the last element from this list."""
+
+        if not self.head:
+            return
+
+        if not self.head.next:
+            target = self.head
+            target.next = None
+            self.head = None
+            self.size -= 1
+            return target
+
+        pt = self.head
+        while pt.next:
+            pt = pt.next
+            if pt.next is None:
+                pt
+
+
+    def remove_index(self, index):
+        """ Removes the element at the specified position in this list.
+
+        :param index: the index in the list to remove the element from
+        :type index: int
+        """
+
+        self._ensure_index(index=index)
+
+        pt, cnt = self.head, 0
+        while pt:
+            if cnt == index:
+                target = pt
+                self.head = self.head.next
+                target.next = None
+                self.size -= 1
+                return target
+            pt = pt.next
+
+    def remove_value(self, value):
         """ Removes the first occurrence of the specified element from
         this list, if it is present.
 
@@ -154,16 +202,22 @@ class LinkedList():
 
         :param value: value of the object to remove
         :type value: obj
+        :rtype: bool
         """
+
+        if not self.head:
+            return False
 
         pt = self.head
         if pt.value == value:
             self.head = pt.next
+            self.size -= 1
             return True
 
         while pt.next:
             if pt.next.value == value:
                 pt.next = pt.next.next
+                self.size -= 1
                 return True
             pt = pt.next
 
