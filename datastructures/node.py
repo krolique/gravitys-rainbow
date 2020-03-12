@@ -2,16 +2,16 @@
 """
     Node
     ----
-    Contains classes and functions relating to node(s)
+    A node is a basic unit of a data structure, such as a linked list
+    or tree data structure. Nodes contain data and also may link to
+    other nodes.
 
 """
 
 
 class Node():
     """ Node
-    A node is a basic unit of a data structure, such as a linked list
-    or tree data structure. Nodes contain data and also may link to
-    other nodes.
+    The base node that does not define any property except a value.
     """
 
     def __init__(self, value=None):
